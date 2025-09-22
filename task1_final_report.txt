@@ -1,0 +1,43 @@
+Cyber Security Internship – Task 1
+
+Task: Scan Your Local Network for Open Ports
+
+Objective:
+To perform basic network reconnaissance using Nmap, identify open ports and services on the local network, and understand potential security risks.
+
+Steps Performed:
+1. Installed Nmap from the official site.
+2. Found my local IP range using ipconfig/ifconfig (example: 192.168.1.0/24).
+3. Ran TCP SYN scan using:
+   nmap -sS 192.168.1.0/24
+4. Observed results and noted devices with open ports.
+5. Analyzed services running on common ports (22, 80, 443, 3389).
+6. Used Wireshark optionally to capture packets.
+
+Sample Nmap Results:
+Nmap scan report for 192.168.1.5
+Host is up (0.0021s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+3389/tcp open  ms-wbt-server
+
+Analysis of Security Risks:
+- Port 22 (SSH): Brute force attacks possible if weak authentication used.
+- Port 80 (HTTP): Unencrypted communication vulnerable to sniffing.
+- Port 443 (HTTPS): More secure but depends on TLS configuration.
+- Port 3389 (RDP): Often targeted by attackers for remote access.
+
+Recommendations:
+- Close unused ports.
+- Use strong passwords or key-based authentication.
+- Restrict RDP access with VPN/firewall rules.
+- Keep systems updated and patched.
+
+Key Concepts:
+Port scanning, TCP SYN scan, IP ranges, reconnaissance, open ports, security risks.
+
+---
+End of Report
